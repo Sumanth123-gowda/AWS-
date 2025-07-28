@@ -1,2 +1,0 @@
-# AWS-
-Amazon web services
