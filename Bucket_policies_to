@@ -1,0 +1,22 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "blockallpublicaccess",
+			"Principal": {},
+			"Effect": "Deny",
+			"Action": [
+				"s3:*"
+			],
+			"Resource": [
+				"arn:aws:s3:::Bucket-name/*",
+        "arn:aws:s3:::Bucket-name"
+			],
+			"Condition": {
+				"StringNotEquals": {
+					"aws:PrincipalArn": "\"aws:PrincipleArn\":\"arn:aws:Iam::Account-id:root\""
+				}
+			}
+		}
+	]
+}
